@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lear how to read basic time from the clock.">
+    <meta name="keywords" content="test, time, clock">
+    <meta name="author" content="Artem Soroka">
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="../src/index/time-icon.png"/>	
+    <script src="script.js" defer></script>
+    <noscript>Failed to load JavaScript!</noscript>
+    <title>Time test</title>
+</head>
+
+<body>
+    <div id="question" class="allText">What time is displayed on the clock?</div>
+    <div class="test">
+        <div class="clock">
+            <div class="hour">
+                <div class="hourHand" id="hourHand"></div>
+            </div>
+            <div class="min">
+                <div class="minuteHand" id="minuteHand"></div>
+            </div>
+        </div>
+    </div>
+    <div class="answer">
+        <select id="answerMinutes" class="allText">
+            <option value="1" disabled selected hidden>Choose time</option>
+            <option value="30">Half past</option>
+            <option value="15">Quarter past</option>
+            <option value="45">Quarter to</option>
+            <option value="0">O'clock</option>
+        </select>
+        <select id="answerHours" class="allText">
+            <option value="0" disabled selected hidden></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <input type="button" value="OK" onclick="checkAnswer()" class="allText button">
+    </div>
+    <hr>
+	<div id="totallyAnswered" class="allText">Answered questions: 0 </div>
+	<div id="correctAnswers" class="allText">Correct answers: 0% </div>
+</body>
+
+</html>

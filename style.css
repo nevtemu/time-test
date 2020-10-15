@@ -1,0 +1,93 @@
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    font: 15px;
+}
+body{
+    display: grid;
+    background-color: rgb(251, 255, 239);
+}
+.test{/*This area contains clock itself. I calculated for central position on all screens.*/
+    background-color: rgb(255, 244, 214);
+    padding: 2rem calc((100vw - 390px)/2);
+}
+#totallyAnswered, #correctAnswers, #question, .answer{
+    justify-self: center;
+}
+#question{
+    padding: 1rem;
+    padding-top: calc((100vh - 390px - 20rem)/2);
+}
+.answer{
+    padding: 1rem;
+}
+.button{
+    width: 10rem;
+}
+.allText{
+    font-size: 3rem;
+    font-weight: bold;
+}
+@media (max-width: 1000px){ /*Smaller fonts for small device screens*/
+    .allText{
+        font-size: 2.5rem;
+    }
+}
+/* Next blocks draw parts of the clock */
+.clock{/*Clock face*/
+    width:350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white url(clock.png);
+    background-size: cover;
+    border-radius: 50%;
+    border: 20px solid white;
+    box-shadow: inset 0 0 30px rgba(0,0,0.1), 0 20px 20px rgba(0,0,0.2), 0 0 0 4px rgba(255, 255,255,1)
+}
+.clock::before{/*This is center of clock fave*/
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #848484;
+    border: 2px solid white;
+    z-index: 100;
+    border-radius: 50%;
+}
+.hour, .min{/*Clock hands*/
+position: absolute;
+}
+.hour, .hourHand{
+    width:160px;
+    height:160px;
+}
+.min, .minuteHand{
+    width:250px;
+    height:250px;
+}
+.hourHand, .minuteHand{
+    display:flex;
+    justify-content: center;
+    position:absolute;
+    border-radius: 50%;}
+.hourHand::before, .minuteHand::before{
+    content: '';
+    position: absolute;
+    border-radius: 6px 6px 0 0;
+}
+.hourHand::before{
+    width:8px;
+    height:80px;
+    background: dimgray;
+    z-index:10;
+}
+.minuteHand::before{
+    width:4px;
+    height:120px;
+    background: grey;
+    z-index:11;
+}
