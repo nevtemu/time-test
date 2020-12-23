@@ -30,11 +30,6 @@ body{
     font-size: 3rem;
     font-weight: bold;
 }
-@media (max-width: 1000px){ /*Smaller fonts for small device screens*/
-    .allText{
-        font-size: 2.5rem;
-    }
-}
 /* Next blocks draw parts of the clock */
 .clock{/*Clock face*/
     width:350px;
@@ -42,13 +37,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white url(clock.png);
+    background: white url(./src/clock.png);
     background-size: cover;
     border-radius: 50%;
     border: 20px solid white;
     box-shadow: inset 0 0 30px rgba(0,0,0.1), 0 20px 20px rgba(0,0,0.2), 0 0 0 4px rgba(255, 255,255,1)
 }
-.clock::before{/*This is center of clock fave*/
+.clock::before{/*This is center of clock face*/
     content: '';
     position: absolute;
     width: 15px;
@@ -59,7 +54,7 @@ body{
     border-radius: 50%;
 }
 .hour, .min{/*Clock hands*/
-position: absolute;
+    position: absolute;
 }
 .hour, .hourHand{
     width:160px;
@@ -90,4 +85,22 @@ position: absolute;
     height:120px;
     background: grey;
     z-index:11;
+}
+@media (max-width: 1000px){ /*Smaller fonts for small device screens*/
+    .allText{
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 400px){ 
+    .allText{
+        font-size: 1rem;
+    }
+    .clock{/*Clock face*/
+        width:300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .button{
+        width: 7rem;
+    }
 }
